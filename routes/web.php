@@ -32,5 +32,5 @@ Route::get("/register", [UserController::class, "create"])->middleware("guest");
 Route::post("/register", [UserController::class, "store"])->middleware("guest");
 
 Route::get("/login", [UserController::class, "login"])->name("login")->middleware("guest");
-Route::post("/login", [UserController::class, "signin"])->middleware("guest"); // Ļoti nepareizi, labāk būtu login2, vēl labāk - uztaisīt atsevišķu Controller
+Route::post("/login", [UserController::class, "signin"])->middleware("guest"); 
 Route::post("/logout", [UserController::class, "logout"])->middleware("auth");

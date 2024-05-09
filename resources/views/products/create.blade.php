@@ -1,4 +1,14 @@
 <x-layout>
+  <style>
+    button{
+      color: white;
+      background-color: black;
+    }
+  </style>
+<x-slot:heading>
+      Add a new device
+    </x-slot:heading>
+  <main>
   @if ($errors->any())
     <ul style="position: fixed; top:20px; left: 20px" class="alert alert-danger">
       @foreach ($errors->all() as $err)
@@ -20,7 +30,7 @@
     </label>
     <label>
       Price:
-      <input type="number" step="0.01" max="9" name="price"/>
+      <input type="number" step="1" max="INF" name="price"/>
     </label>
     <label>
       Image:
@@ -28,4 +38,5 @@
     </label>
     <button>Add</button>
   </form>
+  </main>
 </x-layout>

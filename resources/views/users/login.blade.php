@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layout>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <style>
+<style>
       form {
         display: flex;
         flex-direction: column;
@@ -18,10 +11,11 @@
         width: 100px;
       }
     </style>
-</head>
 
-<body>
-    <h1>Login</h1>
+    <x-slot:heading>
+      Login
+    </x-slot:heading>
+      
     <form method="POST" action="/login">
       @csrf
       <label>
@@ -37,6 +31,7 @@
       @enderror
       <button>Submit</button>
     </form>
+    
     @if (session()->has("success"))
       <div x-data="{ open: true }">
         <div x-show="open">
@@ -45,6 +40,4 @@
         </div>
       </div>
     @endif
-</body>
-
-</html>
+    </x-layout>

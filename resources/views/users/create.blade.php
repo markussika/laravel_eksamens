@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
-    <style>
-      form {
+<x-layout>
+  <style>
+     form {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -16,11 +9,15 @@
       form button {
         width: 100px;
       }
-    </style>
-</head>
-
-<body>
-    <h1>Register</h1>
+      input, textarea{
+        border: 1px black;
+      }
+      
+  </style>
+  <x-slot:heading>
+      Register
+    </x-slot:heading>
+  
     <form method="POST" action="/register">
       @csrf
       <label>
@@ -46,6 +43,4 @@
       @enderror
       <button>Submit</button>
     </form>
-</body>
-
-</html>
+</x-layout>

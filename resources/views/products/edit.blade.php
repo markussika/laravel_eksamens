@@ -1,5 +1,7 @@
 <x-layout>
-  
+<x-slot:heading>
+    Edit page
+</x-slot:heading>
   @if ($errors->any())
     <ul style="position: fixed; top:20px; left: 20px" class="alert alert-danger">
       @foreach ($errors->all() as $err)

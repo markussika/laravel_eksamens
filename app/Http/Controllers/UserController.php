@@ -44,7 +44,7 @@ class UserController extends Controller
                              "password" => $request->password])) {
             return redirect("/products");
         } else {
-            dd("dsfbgd");
+            return redirect("/products");
         }
     }
 
